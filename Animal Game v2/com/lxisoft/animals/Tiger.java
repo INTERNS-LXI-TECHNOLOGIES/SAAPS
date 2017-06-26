@@ -24,18 +24,6 @@ public class Tiger extends Animal implements carnivore
 
 	}
 
-/*	public Location roam()
-	{
-		Location currentLocation=new Location((int)(Math.random()*40),(int)(Math.random()*40));
-
-		while(Forest.calculateDistance(currentLocation,initialLocation)>domain)
-		{
-			currentLocation=new Location((int)(Math.random()*40),(int)(Math.random()*40));
-		}
-		return currentLocation;
-
-	}*/
-
 
 	public void hunt(Animal animal)
 	{
@@ -58,7 +46,7 @@ public class Tiger extends Animal implements carnivore
 				else
 				{
 					
-					System.out.println("\t"+animal+" escapes from "+this);
+					System.out.println("\n\t"+animal+" is lucky as it escapes from "+this);
 					this.increaseHungerLevel(1);
 
 				}
@@ -73,13 +61,13 @@ public class Tiger extends Animal implements carnivore
 
 
 			}
-			//Forest.updateNoOfAnimals();
+	
 		}
 
 		else
 		{
 
-			System.out.println("\n\t"+this+" leaves the other ");
+			System.out.println("\n\t"+this+" is not so hungry and leaves the other ");
 			this.increaseHungerLevel(1);
 
 		}
@@ -125,7 +113,7 @@ public class Tiger extends Animal implements carnivore
 			else
 			{
 
-				System.out.print(" does not win..!\n\t"+this+" escapes from the stronger animal");
+				System.out.print(" does not win..!\n\t"+this+" is lucky as it escapes from the stronger animal");
 				animal.increaseHungerLevel((int)(this.getStrength()/3));
 				this.increaseHungerLevel((int)(animal.getStrength()/3));				
 
@@ -147,7 +135,7 @@ public class Tiger extends Animal implements carnivore
 			else
 			{
 
-				System.out.print(" does not win..!\n\t"+this+" escapes from the stronger animal");
+				System.out.print(" does not win..!\n\t"+this+" is lucky as it escapes from the stronger animal");
 				animal.increaseHungerLevel((int)(this.getStrength()/3));
 				this.increaseHungerLevel((int)(animal.getStrength()/3));
 
@@ -155,9 +143,6 @@ public class Tiger extends Animal implements carnivore
 
 		}
 
-
-
-		//Forest.updateNoOfAnimals();
 	}
 
 }

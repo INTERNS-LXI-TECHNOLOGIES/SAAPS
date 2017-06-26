@@ -40,6 +40,16 @@ public abstract class Animal
 
 	}
 
+	public boolean equals(Animal animal2)
+	{
+
+		if((this.getStrength()==animal2.getStrength()) && (this.getHungerLevel()==animal2.getHungerLevel()) && (this.getDomain()==animal2.getDomain()))
+			return true;
+		else
+			return false;
+
+	}
+
 	public void increaseDomain()
 	{
 		this.domain+=2;
@@ -64,10 +74,6 @@ public abstract class Animal
 	
 	}
 
-/*	public String getName()
-	{
-		return name;
-	}*/
 
 	public int getHungerLevel()
 	{
@@ -75,13 +81,7 @@ public abstract class Animal
 		return hungerLevel;
 	}
 
-	/*public void changeStrength()
-	{
 
-		this.strength--;
-
-	}
-*/
 	public void reduceHungerLevel(int changeInHungerLevel)
 	{
 		if((this.hungerLevel-changeInHungerLevel)<=0)
@@ -98,7 +98,7 @@ public abstract class Animal
 
 		if((this.hungerLevel+changeInHungerLevel)>10)
 		{
-			System.out.println("\n\tUnfortunately "+this.name+" has died due to starvation\n\n");																													
+			System.out.println("\n\n\tUnfortunately "+this.name+" has died due to starvation\n\n");																													
 			makeDie();
 			Forest.updateNoOfAnimals();
 			

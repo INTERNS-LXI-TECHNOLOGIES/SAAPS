@@ -26,18 +26,6 @@ public class Lion extends Animal implements carnivore
 		
 	}
 
-/*	public Location roam()
-	{
-		Location currentLocation=new Location((int)(Math.random()*40),(int)(Math.random()*40));
-
-		while(Forest.calculateDistance(currentLocation,initialLocation)>domain)
-		{
-			currentLocation=new Location((int)(Math.random()*40),(int)(Math.random()*40));
-		}
-		return currentLocation;
-
-	}*/
-
 
 	public void hunt(Animal animal)
 	{
@@ -52,17 +40,14 @@ public class Lion extends Animal implements carnivore
 				{
 
 				System.out.println("\t"+this+" kills the other");
-				//System.out.print("\t\tfirst one works");
 				this.reduceHungerLevel(animal.getStrength());
-				//System.out.print("\t\treduceHungerLevel works");
 				animal.makeDie();
 				Forest.updateNoOfAnimals();
-				//System.out.print("\t\tmake die works");
 				}
 				else
 				{
 
-					System.out.println("\t"+animal+" escapes from "+this);
+					System.out.println("\n\t"+animal+" is lucky as it escapes from "+this);
 					this.increaseHungerLevel(1);
 
 				}
@@ -80,13 +65,12 @@ public class Lion extends Animal implements carnivore
 
 			}
 			
-			//System.out.print("\t\tupdateNoOfAnimals works");
 		}
 
 		else
 		{
 
-			System.out.println("\t"+this+" leaves the other ");
+			System.out.println("\t"+this+" is not so hungry and leaves the other ");
 			this.increaseHungerLevel(1);
 
 		}
@@ -132,7 +116,7 @@ public class Lion extends Animal implements carnivore
 			else
 			{
 
-				System.out.print(" does not win..!\n\t"+this+" escapes from the stronger animal");
+				System.out.print(" does not win..!\n\t"+this+" is lucky and escapes from the stronger animal");
 				animal.increaseHungerLevel((int)(this.getStrength()/3));
 				this.increaseHungerLevel((int)(animal.getStrength()/3));				
 
@@ -154,7 +138,7 @@ public class Lion extends Animal implements carnivore
 			else
 			{
 
-				System.out.print(" does not win..!\n\t"+this+" escapes from the stronger animal");
+				System.out.print(" does not win..!\n\t"+this+" is lucky and escapes from the stronger animal");
 				animal.increaseHungerLevel((int)(this.getStrength()/3));
 				this.increaseHungerLevel((int)(animal.getStrength()/3));
 

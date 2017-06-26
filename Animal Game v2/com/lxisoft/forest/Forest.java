@@ -2,6 +2,7 @@ package com.lxisoft.forest;
 import com.lxisoft.animals.*;
 import java.util.*;
 import com.lxisoft.animalGenre.*;
+import com.lxisoft.exceptions.*;
 
 
 
@@ -26,18 +27,6 @@ public class Forest
 		animalList.add(new Zebra("Zebra_1"));
 		animalList.add(new Zebra("Zebra_2"));
 		animalList.add(new Rabbit("Rabbit"));
-
-
-			/*animals[0]=new Lion("Lion");
-			animals[1]=new Tiger("Tiger_1");
-			animals[2]=new Tiger("Tiger_2");
-			animals[3]=new Rabbit("Rabbit");
-			animals[4]=new Deer("Deer_1");
-			animals[5]=new Deer("Deer_2");
-			animals[6]=new Zebra("Zebra_1");
-			animals[7]=new Zebra("Zebra_2");
-			animals[8]=new Elephant("Elephant_1");
-			animals[9]=new Elephant("Elephant_2");*/
 
 	}
 
@@ -74,7 +63,7 @@ public class Forest
 			secondAnimal=findNearestAnimal(animalCarnivore);
 			
 
-			if(animalCarnivore!=secondAnimal)
+			if(animalCarnivore.equals(secondAnimal)==false)
 			{
 				
 				if(animalCarnivore instanceof Lion && secondAnimal instanceof carnivore)
@@ -97,8 +86,6 @@ public class Forest
 				}
 				else
 					((Tiger)animalCarnivore).hunt(secondAnimal);
-
-				//System.out.print(animalCarnivore+" meets "+secondAnimal+"  domain: "+animalCarnivore.getDomain()+", "+secondAnimal.getDomain());
 
 			}
 			else
@@ -162,7 +149,7 @@ public class Forest
 				if(minimumDistance==0)
 					minimumDistance=distance;
 
-				if((animal1!=animal2) && (distance<=minimumDistance) && (distance<animal1.getDomain()))
+				if((animal1.equals(animal2))==false && (distance<=minimumDistance) && (distance<animal1.getDomain()))
 				{	
 					
 					minimumDistance=distance;
@@ -188,134 +175,7 @@ public class Forest
 
     }
 
-		/*if(animalCarnivore.getLivingStatus()==true && secondAnimal.getLivingStatus()==true)
-        {
-			if(animalCarnivore instanceof Tiger && secondAnimal instanceof Tiger)	
-			{
-                
-                locationOfCarnivore=((Tiger)animalCarnivore).roam();
-
-				locationOfSecondAnimal=((Tiger)secondAnimal).roam();
-				
-				if(calculateDistance(locationOfCarnivore,locationOfSecondAnimal)<=((Tiger)animalCarnivore).getDomain())
-
-					((Tiger)animalCarnivore).fight(secondAnimal);
-
-				
-			//System.out.print(calculateDistance(locationOfCarnivore,locationOfSecondAnimal));
-
-				//System.out.print("\n\t"+animalCarnivore.getName()+" n "+secondAnimal.getName()+"\n\n");
-
-			}
-
-			else if(animalCarnivore instanceof Lion && secondAnimal instanceof Tiger)	
-			{
-                
-              locationOfCarnivore=((Lion)animalCarnivore).roam();
-
-				locationOfSecondAnimal=((Tiger)secondAnimal).roam();
-				
-				if(calculateDistance(locationOfCarnivore,locationOfSecondAnimal)<=((Lion)animalCarnivore).getDomain())
-
-					((Lion)animalCarnivore).fight(secondAnimal);
-				//System.out.print("\n\t"+"lion n tiger\n\n");
-				//System.out.print("\n\t"+animalCarnivore.getName()+" n "+secondAnimal.getName()+"\n\n");
-
-			}
-
-			else if(animalCarnivore instanceof Tiger && secondAnimal instanceof Lion)	
-			{
-                
-                locationOfCarnivore=((Tiger)animalCarnivore).roam();
-
-				locationOfSecondAnimal=((Lion)secondAnimal).roam();
-				
-				if(calculateDistance(locationOfCarnivore,locationOfSecondAnimal)<=((Tiger)animalCarnivore).getDomain())
-
-				((Tiger)animalCarnivore).fight(secondAnimal);
-				//System.out.print("\n\t"+"Tiger n lion\n\n");
-				//System.out.print("\n\t"+animalCarnivore.getName()+" n "+secondAnimal.getName()+"\n\n");
-
-			}
-
-
-			else if(animalCarnivore instanceof Lion && secondAnimal instanceof herbivore)
-			{
-              
-                locationOfCarnivore=((Lion)animalCarnivore).roam();
-
-				locationOfSecondAnimal=secondAnimal.getLocation();
-				
-				if(calculateDistance(locationOfCarnivore,locationOfSecondAnimal)<=((Lion)animalCarnivore).getDomain())
-					((Lion)animalCarnivore).hunt(secondAnimal);
-				else
-					animalCarnivore.increaseHungerLevel(1);
-				//System.out.print("\n\t"+"Tiger n herbivore\n\n");
-				//System.out.print("\n\t"+animalCarnivore.getName()+" n "+secondAnimal.getName()+"\n\n");
-
-            }
-            else
-            {
-                locationOfCarnivore=((Tiger)animalCarnivore).roam();
-
-				locationOfSecondAnimal=secondAnimal.getLocation();
-				
-				if(calculateDistance(locationOfCarnivore,locationOfSecondAnimal)<=((Tiger)animalCarnivore).getDomain())
-					
-					((Tiger)animalCarnivore).hunt(secondAnimal);
-
-				else
-
-					animalCarnivore.increaseHungerLevel(1);
-				//System.out.print("\n\t"+"Tiger n herbivore\n\n");
-				//System.out.print("\n\t"+animalCarnivore.getName()+" n "+secondAnimal.getName()+"\n\n");
-
-            }       
-            
-           
-        }
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
-			int count=0;
-
-			for (int i=0;i<3;i++ ) 
-			{
-				
-				if((animalList.get(i)).getLivingStatus()==true)
-
-					count++;
-			}
-
-			if(count==0 || noOfAnimals==1)
-		 			
-				return false;
-
-			else if(count==noOfAnimals)
-
-			{
-				for (int i=0;i<3 ;i++ ) 
-				{
-					
-					if((animalList.get(i)).getLivingStatus()==true)
-
-						(animalList.get(i)).increaseHungerLevel(1);
-
-				}
-
-				return true;
-			}
-			else
-
-				return true;
-			
 		
-	}
-
-    
-    public static int calculateDistance(Location locationOfCarnivore,Location locationOfSecondAnimal)
-    {
-  	  return (int)Math.sqrt(((locationOfCarnivore.getXCoordinate()-locationOfSecondAnimal.getXCoordinate())*(locationOfCarnivore.getXCoordinate()-locationOfSecondAnimal.getXCoordinate()))+((locationOfCarnivore.getYCoordinate()-locationOfSecondAnimal.getYCoordinate())*(locationOfCarnivore.getYCoordinate()-locationOfSecondAnimal.getYCoordinate())));
-    }*/
-
 
 	public void displayWinner()
 	{
@@ -342,13 +202,17 @@ public class Forest
 			if(i==9)
 				System.out.print("\n\n");
 		}
-        
-        if(noOfAnimals==0)
 
-        	 System.out.print("\n\n\t\t\tUnfortunately..no animal is there....all animals are died.......");
-
-
-
+        try
+        {
+        	if(noOfAnimals==0)
+        		throw new NoAnimalException();
+        }
+        catch(NoAnimalException e)
+        {
+        	e.showDetails();
+        	e.printStackTrace();
+        }
 
 	}
 
@@ -356,7 +220,6 @@ public class Forest
 	{
 		noOfAnimals--;
 
-		//System.out.print("\n\t\t"+noOfAnimals);
 	}
 
 
