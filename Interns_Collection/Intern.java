@@ -1,40 +1,53 @@
+import java.util.*;
+
 public class Intern implements Comparable<Intern>
 {
-	private String internName,internAddress,internPhnNo;
+	
+	String name,address,phNo;
 
-	public Intern(String name,String address,String phn_No)
+	public Intern(String name,String address,String phNo)
 	{
-		this.internName=name;
-		this.internAddress=address;
-		this.internPhnNo=phn_No;
+
+		this.name=name;
+		this.address=address;
+		this.phNo=phNo;
+
+	}
+
+	public void showInternDetails()
+	{
+
+		System.out.print("\t"+name+"\t  "+address+"\t  "+phNo+"\n\n");
+
+	}
+
+	public int compareTo(Intern secondIntern)
+	{
+     return this.name.compareTo(secondIntern.getname());
+	}
+
+	public String getname()
+	{
+      return this.name;
+
+	}
+
+    public String getAddress()
+	{
+      return this.address;
+
+	}
+
+	public String getPhNo()
+	{
+		return this.phNo;
 	}
 
 	public String toString()
 	{
 
-		return this.internName;
+		return ("\n\t"+this.name+"\t   "+this.address+"     "+this.phNo+"\n");
 	}
 
-	public int compareTo(Intern intern2)
-	{
-
-		return this.internName.compareTo(intern2.getName());
-	}
-
-	public void printDetails()
-	{
-		System.out.print("\t\t\t"+this.internName+"\t\t"+this.internAddress+"\t\t"+this.internPhnNo+"\t\n");
-
-	}
-
-	public String getName()
-	{
-		return this.internName;
-	}
-
-	public String getAddress()
-	{
-		return internAddress;
-	}
 
 }
