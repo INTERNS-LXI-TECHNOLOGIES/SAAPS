@@ -22,7 +22,7 @@ public class Intern implements Comparable<Intern>
 
     public int compareTo(Intern intern1)
     {
-       return this.name.compareTo(intern1.getName());
+       return this.name.compareTo(intern1.name);
     }
 
     public String getName()
@@ -36,20 +36,15 @@ public class Intern implements Comparable<Intern>
    	return this.address;
    }
 
+   public String getPhNo()
+   {
+   	return this.ph_no;
+   }
 	public void printDetails()
 	{
 	
-	System.out.println(" \t"+this.name+"\t\t"+this.address+"\t\t"+this.ph_no+"  ");
+	System.out.println(" \t\t\t"+this.name+"\t\t"+this.address+"\t\t"+this.ph_no+"  ");
 	
 		 
 	}
-/*
-	public void sortByName()
-	{
-		for(int i=0;i<10;i++)
-		{
-			Arrays.sort(this.name);
-		}
-		
-	} */
 } 
