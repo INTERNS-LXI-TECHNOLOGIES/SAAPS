@@ -12,7 +12,7 @@ public class Intern implements Comparable<Intern>
 	public String toString()
 	{
 
-		return this.internName;
+		return this.internName+"\t"+this.internAddress+"\t"+this.internPhnNo;
 	}
 
 	public int compareTo(Intern intern2)
@@ -35,6 +35,10 @@ public class Intern implements Comparable<Intern>
 	public String getAddress()
 	{
 		return internAddress;
+	}
+	public String getPhnNo()
+	{
+		return internPhnNo;
 	}
 
 }
