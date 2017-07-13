@@ -40,11 +40,28 @@ public class Intern implements Comparable<Intern>
    {
    	return this.ph_no;
    }
+   
+   public void updateName(String name)
+   {
+   	this.name=name;
+   }
+
+   public void updateAddress(String address)
+   {
+   	this.address=address;
+   }
+
+   public void updatePhoneNo(String ph_no)
+   {
+   	this.ph_no=ph_no;
+   }
 	public void printDetails()
 	{
 	
-	System.out.println(" \t\t\t"+this.name+"\t\t"+this.address+"\t\t"+this.ph_no+"  ");
+	System.out.println(" \t\t\t\t"+this.name+"\t\t"+this.address+"\t\t"+this.ph_no+"  ");
 	
-		 
+	 	 
 	}
+
+
 } 
