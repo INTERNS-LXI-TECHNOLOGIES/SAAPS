@@ -15,6 +15,23 @@ public class Intern implements Comparable<Intern>
 		return this.internName+"\t"+this.internAddress+"\t"+this.internPhnNo;
 	}
 
+	public void setName(String newName)
+	{
+		this.internName=newName;
+	}
+
+	public void setAddress(String newAddress)
+	{
+		this.internAddress=newAddress;
+	}
+
+	public void setPhnNo(String newPhnNo)
+	{
+		this.internPhnNo=newPhnNo;
+	}
+
+
+
 	public int compareTo(Intern intern2)
 	{
 
@@ -23,7 +40,7 @@ public class Intern implements Comparable<Intern>
 
 	public void printDetails()
 	{
-		System.out.print("\t\t\t"+this.internName+"\t\t"+this.internAddress+"\t\t"+this.internPhnNo+"\t\n");
+		System.out.print("\n\t\t"+this.internName+"\t\t"+this.internAddress+"\t\t"+this.internPhnNo+"\n\t\t");
 
 	}
 
@@ -40,5 +57,6 @@ public class Intern implements Comparable<Intern>
 	{
 		return internPhnNo;
 	}
+
 
 }
