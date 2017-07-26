@@ -8,7 +8,7 @@ public class TDD
 
 public static void main(String[] args)
 {
-   new ContactModifier();
+   new ContactController();
 }	
 
 }
