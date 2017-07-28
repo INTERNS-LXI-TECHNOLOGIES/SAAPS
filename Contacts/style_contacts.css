@@ -1,0 +1,33 @@
+body {
+	background-color: #fff;
+	margin: 0;
+	padding: 0px ;
+	font-family: sans-serif, verdana;
+}
+div#top {
+	background-color: #ff1493;
+	/*background-color:#ff1493;*/
+	color: #fff;
+	padding: 25px 0px 20px 25px;
+}
+#individual_contacts {
+	border: 1.2px solid #ff00ff;
+	border-radius: 5px;
+	margin: 30px;
+	text-align: left;
+	padding: 15px;
+	font-size: 20px;
+	color: #ff00ff;
+	background-color: #ffccff;  
+	/*color: #ff1493;*/
+}
+#contact_list {
+	border: 1.2px solid #ff1493;
+	border-radius: 5px;
+	margin: 30px;
+	text-align: left;
+	padding: 15px;
+	font-size: 20px;
+	color: #12845d;
+	/*color: #ff1493;*/
+}
